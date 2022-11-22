@@ -60,6 +60,8 @@ class CLIPDemo:
                     pixel_values=images.to(self.device)).pooler_output
                 embeddings.append(image_embedding)
         self.image_embeddings_ =  torch.cat(embeddings)
+	  
+	  torch.save(self.image_embeddings_, ''E:\\0_text_to_image_engine\\Data_flicker\\image_embeddings.pt')
 
     def compute_text_embeddings(self, text: list):
         """ Compute text embeddings for a list of sentences
